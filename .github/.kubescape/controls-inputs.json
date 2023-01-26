@@ -18,6 +18,7 @@
   "memory_request_max": [],
   "memory_request_min": [],
   "publicRegistries": [
+    "ghcr.io",
     "registry.hub.docker.com"
   ],
   "recommendedLabels": [
