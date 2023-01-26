@@ -1,9 +1,10 @@
 name: "Security Scans"
 on:
-  workflow_dispatch:
   schedule:
     - cron: '0 3 * * 1' # run tests at 1 AM (UTC), every monday (1) # run integration tests only when triggered manually
-  inputs:
+
+  workflow_dispatch:
+    inputs:
       branch:
         description: 'Take CI build artifacts from branch (e.g., master, release-x.y.z)'
         required: true
