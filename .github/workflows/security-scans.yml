@@ -66,17 +66,15 @@ jobs:
         with:
           name: manifests
           path: |
-            ./dist/keptn-lifecycle-operator-manifest/
-            ./dist/scheduler-manifest/
+            ./dist/*-manifest/
+            ./dist/*-manifest-test/
 
       - name: Upload images
         uses: actions/upload-artifact@v3
         with:
           name: images
           path: |
-            ./dist/functions-runtime-image.tar/
-            ./dist/keptn-lifecycle-operator-image.tar/
-            ./dist/scheduler-image.tar/
+            ./dist/*-image.tar/
             
   security-scans:
     name: "Security Scans"
