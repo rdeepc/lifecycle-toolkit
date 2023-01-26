@@ -23,13 +23,14 @@ jobs:
       - name: Determine Target Branch for Integration Tests
         id: determine_branch
         run: |
-            if [[ "${{ github.event.inputs.branch }}" != "" ]]; then
-              # branch was manually set by user -> probably a workflow_dispatch action
-              BRANCH=${{ github.event.inputs.branch }}
-              echo "Using $BRANCH as target branch for integration tests"
-            else
-              BRANCH='main'
-            echo "BRANCH=$(echo ${BRANCH})" >> $GITHUB_OUTPUT
+          if [[ "${{ github.event.inputs.branch }}" != "" ]]; then
+            # branch was manually set by user -> probably a workflow_dispatch action
+            BRANCH=${{ github.event.inputs.branch }}
+            echo "Using $BRANCH as target branch for integration tests"
+          else
+            BRANCH='main'
+          fi
+          echo "BRANCH=$(echo ${BRANCH})" >> $GITHUB_OUTPUT
 
       - name: Find latest successful run ID
         id: last_run_id
